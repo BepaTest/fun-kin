@@ -1,50 +1,19 @@
 .message-list {
   flex: 1;
   overflow-y: auto;
-  max-height: 400px;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  padding: 0.5rem;
-}
-
-.message-list__message {
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  width: 80%;
 }
 
-/* Modifieurs pour l'origine du message */
-.message-list__message--user {
-  align-items: flex-end;
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 0.3rem;
 }
 
-.message-list__message--bot {
-  align-items: flex-start;
-}
-
-/* La "bulle" de texte */
-.message-list__bubble {
-  background-color: #ccc;
-  color: #000;
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
-  max-width: 80%;
-}
-
-/* Modifieurs pour la bulle si l'auteur est l'utilisateur */
-.message-list__bubble--user {
-  background-color: #007bff;
-  color: #fff;
-}
-
-/* Modifieur si l'auteur est le bot */
-.message-list__bubble--bot {
-  background-color: #ccc;
-  color: #000;
-}
-
-/* Horodatage (heure / date du message) */
-.message-list__timestamp {
-  font-size: 0.7rem;
-  color: #666;
+::-webkit-scrollbar-thumb {
+  background-color: #b3a1a1;
+  border-radius: 2rem;
 }

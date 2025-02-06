@@ -1,0 +1,62 @@
+.chat-header {
+  padding: 1rem;
+  /* We can keep background transparent so the gradient shows behind. */
+  color: var(--chat-primary-text, #333);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.chat-header__topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Hamburger button */
+.chat-header__hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chat-header__hamburger-bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--chat-primary-text, #333);
+  border-radius: 2px;
+}
+
+.chat-header__titles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.chat-header__icon {
+  height: 4rem;
+  width: 4rem;
+  margin: 1rem;
+}
+
+.chat-header__greeting {
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.chat-header__subtitle {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #666;
+}

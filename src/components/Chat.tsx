@@ -1,23 +1,24 @@
 import React, { useState } from 'react';
-import { Message } from '../types/ChatTypes';
+import { type Message } from '../types/ChatTypes';
 import MessageList from './MessageList';
 import MessageInput from './MessageInput';
+import ChatHeader from './ChatHeader';
 
-import './Chat.css'; // Import du fichier CSS pour ce composant
+import './Chat.css';
 
 const predefinedResponses: { [keyword: string]: string } = {
-  bonjour: "Bonjour ! Comment puis-je vous aider aujourd'hui ?",
-  hello: "Hello ! Comment puis-je vous aider aujourd'hui ?",
-  merci: "Je vous en prie !",
-  aide: "Je suis là pour vous aider. De quoi avez-vous besoin ?"
+  bonjour: 'Hey, mon petit loulou ! Viens voir Fun Kin pour un gros câlin avant de discuter ?',
+  hello: 'Coucou, ma petite canaille ! Dis-moi, qui est prêt à faire des blagues en famille ?',
+  merci: 'Mais voyons, tu sais bien que tatie est toujours là pour toi, pas besoin de merci !',
+  aide: 'Pas d’inquiétude, je suis comme mamie : toujours partante pour me mêler de tout. Allez, raconte !',
 };
 
 const randomResponses: string[] = [
-  "Intéressant, dites-m'en plus !",
-  "Je vois. Pouvez-vous préciser votre demande ?",
-  "C'est noté. Autre chose ?",
-  "Je suis là pour vous aider.",
-  "Je ne suis pas sûr de comprendre, pouvez-vous reformuler ?"
+  'Oh, ça sent la bonne histoire de famille croustillante ! Vas-y, développe !',
+  "Holà, j'adore quand tu me parles ! Peux-tu en dire un peu plus, mon poussin ?",
+  'Bien noté ! Autre chose à confier à Fun Kin indiscret ?',
+  'T’inquiète, c’est ton oncle préféré qui gère. J’suis sur le coup !',
+  'Oups, tatie a mal capté avec son vieux transistor. Tu peux répéter, mon trésor ?',
 ];
 
 const Chat: React.FC = () => {
@@ -28,20 +29,19 @@ const Chat: React.FC = () => {
       id: Date.now().toString(),
       text: userMessage,
       sender: 'user',
-      timestamp: new Date()
+      timestamp: new Date(),
     };
-
     setMessages((prev) => [...prev, newMessage]);
 
-    // Génère la réponse du bot
+    // Génération de la réponse du bot
     const botResponse = generateBotResponse(userMessage);
     const botMessage: Message = {
       id: (Date.now() + 1).toString(),
       text: botResponse,
       sender: 'bot',
-      timestamp: new Date()
+      senderLabel: 'Fun Kin',
+      timestamp: new Date(),
     };
-
     setMessages((prev) => [...prev, botMessage]);
   };
 
@@ -52,13 +52,14 @@ const Chat: React.FC = () => {
         return predefinedResponses[keyword];
       }
     }
+    // Sinon réponse aléatoire
     const randomIndex = Math.floor(Math.random() * randomResponses.length);
     return randomResponses[randomIndex];
   };
 
   return (
     <div className="chat">
-      <h1 className="chat__heading">Chatbot IA - Exemple</h1>
+      <ChatHeader userName="Thibaud" />
       <MessageList messages={messages} />
       <MessageInput onSend={handleSend} />
     </div>

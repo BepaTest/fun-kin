@@ -1,0 +1,50 @@
+.message-bubble {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  max-width: 70%;
+}
+
+/* If you want bot messages left-aligned, user messages right-aligned */
+.message-bubble--user {
+  align-self: flex-end;
+}
+
+.message-bubble--bot {
+  align-self: flex-start;
+}
+
+/* The "label" above the bubble content (e.g. "Fin • AI Agent") */
+.message-bubble__label {
+  font-size: 0.75rem;
+  color: #333;
+  opacity: 0.7;
+  margin-bottom: 0.2rem;
+  margin-left: 0.8rem;
+}
+
+.message-bubble__icon {
+  height: 0.8rem;
+  width: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+/* Actual bubble shape */
+.message-bubble__content {
+  background-color: var(--chat-bubble-bg, #fff);
+  color: var(--chat-bubble-text, #333);
+  border-radius: var(--chat-bubble-radius, 12px);
+  padding: 0.6rem 1rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Variation for user vs bot if you want distinct colors */
+.message-bubble--user .message-bubble__content {
+  background-color: #fff;
+  color: #333;
+}
+
+.message-bubble--bot .message-bubble__content {
+  background-color: #f5f5f5;
+  color: #333;
+}

@@ -23,17 +23,19 @@ const MessageInput: React.FC<MessageInputProps> = ({ onSend }) => {
 
   return (
     <div className="message-input">
-      <input
-        type="text"
-        placeholder="Tapez votre message..."
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-        onKeyDown={handleKeyPress}
-        className="message-input__field"
-      />
-      <button onClick={handleSend} className="message-input__button">
-        Envoyer
-      </button>
+      <span className="message-input__container">
+        <input
+          type="text"
+          placeholder="Repondre à Kin..."
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          onKeyDown={handleKeyPress}
+          className="message-input__field"
+        />
+        <button onClick={handleSend} className="message-input__button" title="Envoyer">
+          <span className="message-input__icon">↑</span>
+        </button>
+      </span>
     </div>
   );
 };
