@@ -1,12 +1,43 @@
-# Getting Started with Create React App
+# Chatbot Fun Kin ![sourir](image.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ce chatbot est créé pour vous garder de bonne humeur. Il s'appelle Fun Kin (un jeu de mots "un proche amusant") et il est comme votre tonton qui adore raconter des blagues… au bon moment, ou pas trop.  
+Essayez-le, qu'on rigole un peu !
 
-## Available Scripts
+Ce projet est réalisé avec **React.js** et **TypeScript**.
 
-In the project directory, you can run:
+## 🛠️ Fonctionnalités
 
-### `npm start`
+1. **Interface de Chat** :
+
+   - Saisie de message par l'utilisateur.
+   - Affichage du dialogue complet (messages de l'utilisateur et du bot).
+
+2. **Réponses de l’Agent** :
+
+   - Si un mot-clé est reconnu dans le message de l’utilisateur, le bot utilise une réponse prédéfinie.
+   - Sinon, le bot choisit une réponse aléatoire dans une liste.
+
+3. **Expérience Utilisateur** :
+
+   - Interface réactive adaptée à différentes tailles d’écran.
+   - Défilement automatique vers le dernier message.
+
+4. **Gestion d’État** :
+   - Utilisation de hooks React (useState, useEffect).
+
+## 🚀 **Installation et Exécution**
+
+Cloner le dépôt
+Une URL HTTPS - https://github.com/BepaTest/fun-kin.git
+Une URL SSH - git@github.com:BepaTest/fun-kin.git
+
+Ener project directory, you can run:
+
+```bash
+cd /fun-kin
+npm install
+npm start
+```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -14,33 +45,29 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+## 📌 **Les etapes suivantes**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Étape 1
 
-### `npm run build`
+- Connecter le chatbot à ChatGPT.
+- Améliorer l’expérience utilisateur :
+  - Adapter la zone de saisie à la taille du texte entré, en augmentant la hauteur à chaque retour à la ligne.
+  - Ajouter un indicateur "Chatbot en train d’écrire..." lors de la génération de la réponse et modifier la couleur du bouton d’envoi côté utilisateur.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Étape 2
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Amélioration de l'UX : ajouter la possibilité de changer la couleur de l’application en fonction de l’humeur : orange, bleu ou vert.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Étape 3
 
-### `npm run eject`
+- Création d’un profil utilisateur.
+- Ajouter la possibilité de sauvegarder les échanges.
+- Ajouter un menu avec l’historique des messages, permettant de les revoir ou de les supprimer.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Travail en équipe
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Ajouter Eslint et Stylelint pour la detection et correction des erreurs du code JavaScript (React, React hooks, TypeScript) et CSS
+- Configurer git pré-commit qui lance les linteurs, si on détecte des erreurs non corrigées, le commit est bloqué
+- Creer un fichier css avec la defenition des culeurs et des tailles
+- Nommer les classes selon l'approche BEM ([Block Element Modifier](https://getbem.com/naming/))
+- Utiliser [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) pour les messages de commit
